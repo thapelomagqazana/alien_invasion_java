@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Settings {
-    private final int WIDTH = 600;
-    private final int HEIGHT = 800;
+    private final int WIDTH = 500;
+    private final int HEIGHT = 500;
     private Map colors = new HashMap<>();
 
     public Settings(){

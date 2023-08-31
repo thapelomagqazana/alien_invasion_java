@@ -1,10 +1,12 @@
 package com.example.alieninvasiongame;
 
+import com.example.alieninvasiongame.models.Spaceship;
 import com.example.alieninvasiongame.settings.Settings;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
@@ -26,10 +28,20 @@ public class Main extends Application {
 
         // Create an empty black scene with a root node
         Group root = new Group();
+
+        Pane gamePane = new Pane();
+        root.getChildren().add(gamePane);
+
         Scene scene = new Scene(root, settings.getHeight(), settings.getWidth());
         scene.setFill((Paint) settings.getColors().get("black"));
+
         stage.setScene(scene);
         stage.show();
+
+
+        // Create and display the spaceship after the scene is shown
+        Spaceship spaceship = new Spaceship(gamePane, settings.getWidth(), settings.getHeight());
+
     }
 
     public static void main(String[] args) {
