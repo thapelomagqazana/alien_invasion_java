@@ -1,5 +1,6 @@
 package com.example.alieninvasiongame;
 
+import com.example.alieninvasiongame.models.Bullet;
 import com.example.alieninvasiongame.models.Spaceship;
 import com.example.alieninvasiongame.settings.Settings;
 import javafx.application.Application;
@@ -12,6 +13,7 @@ import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.List;
 
 public class Main extends Application {
 
@@ -41,6 +43,14 @@ public class Main extends Application {
 
         // Create and display the spaceship after the scene is shown
         Spaceship spaceship = new Spaceship(gamePane, root,  settings);
+
+//        List<Bullet> bulletList = spaceship.getBullets();
+//        while (bulletList.size() > 0){
+//            // Update bullet movement for each bullet in the game
+//            for (Bullet bullet1: bulletList){
+//                bullet1.move();
+//            }
+//        }
 
     }
 
