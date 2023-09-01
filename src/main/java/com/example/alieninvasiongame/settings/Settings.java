@@ -8,11 +8,19 @@ import java.util.Map;
 public class Settings {
     private final int WIDTH = 500;
     private final int HEIGHT = 500;
+
+
+
+    private final int SHIP_SPEED = 5;
     private Map colors = new HashMap<>();
 
     public Settings(){
         this.colors.put("white", Color.WHITE);
         this.colors.put("black", Color.BLACK);
+    }
+
+    public int getShipSpeed() {
+        return SHIP_SPEED;
     }
     public Map getColors() {
         return this.colors;

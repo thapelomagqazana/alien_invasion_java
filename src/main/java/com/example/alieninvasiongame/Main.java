@@ -40,7 +40,7 @@ public class Main extends Application {
 
 
         // Create and display the spaceship after the scene is shown
-        Spaceship spaceship = new Spaceship(gamePane, settings.getWidth(), settings.getHeight());
+        Spaceship spaceship = new Spaceship(gamePane, root,  settings);
 
     }
 

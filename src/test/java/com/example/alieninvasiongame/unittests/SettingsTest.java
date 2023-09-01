@@ -1,4 +1,4 @@
-package com.example.alieninvasiongame;
+package com.example.alieninvasiongame.unittests;
 
 import com.example.alieninvasiongame.settings.Settings;
 import org.junit.jupiter.api.Test;
