@@ -8,6 +8,7 @@ public class Alien {
     private double x;
     private double y;
     private double alienWidth;
+    private double alienSpeed;
 
     public Alien(double alienWidth, double x, double y){
         // Load alien image using getClass().getResource()
@@ -27,6 +28,14 @@ public class Alien {
         this.y = y;
         this.alienImageView.setX(this.x);
         this.alienImageView.setY(this.y);
+
+        this.alienSpeed = 0.03;
+    }
+
+    public void move(){
+        this.y += alienSpeed;
+        this.alienImageView.setY(this.y);
+
     }
     public ImageView getAlienImageView() {
         return alienImageView;

@@ -4,6 +4,7 @@ import com.example.alieninvasiongame.models.Bullet;
 import com.example.alieninvasiongame.models.Spaceship;
 import com.example.alieninvasiongame.models.alienmanagement.AlienManagement;
 import com.example.alieninvasiongame.settings.Settings;
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -15,7 +16,10 @@ import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Main extends Application {
 
@@ -50,7 +54,17 @@ public class Main extends Application {
 
         // Create and display the spaceship after the scene is shown
         Spaceship spaceship = new Spaceship(gamePane, root,  settings);
+        // Create and display the aliens
         AlienManagement aliens = new AlienManagement(gamePane, settings);
+
+        // Set up your game loop or timer to call moveAllAliens periodically
+        Timer timer = new Timer(true);
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                aliens.moveAllAliens();
+            }
+        }, 0, 16);
 
     }
 

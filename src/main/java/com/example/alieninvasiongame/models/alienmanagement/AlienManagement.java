@@ -42,4 +42,10 @@ public class AlienManagement {
             this.gamePane.getChildren().add(alienIV);
         }
     }
+
+    public void moveAllAliens(){
+        for (Alien alien : this.aliens){
+            alien.move();
+        }
+    }
 }
