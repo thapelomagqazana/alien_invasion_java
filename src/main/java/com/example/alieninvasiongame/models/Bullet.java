@@ -20,7 +20,7 @@ public class Bullet {
         bulletImageView.setY(this.y);
 
         // Set spaceship image size
-        double newWidth = 5; // Adjust this value as needed
+        double newWidth = 8; // Adjust this value as needed
         bulletImageView.setFitWidth(newWidth);
         bulletImageView.setPreserveRatio(true); // Maintain aspect ratio
 

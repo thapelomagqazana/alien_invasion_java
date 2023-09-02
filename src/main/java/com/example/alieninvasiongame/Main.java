@@ -7,6 +7,7 @@ import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -37,20 +38,17 @@ public class Main extends Application {
         Scene scene = new Scene(root, settings.getHeight(), settings.getWidth());
         scene.setFill((Paint) settings.getColors().get("black"));
 
+        // Enable fullscreen mode
+        stage.setFullScreen(true);
+        stage.setFullScreenExitHint("Press ESC to exit fullscreen");
+        stage.setFullScreenExitKeyCombination(KeyCombination.valueOf("ESCAPE"));
+
         stage.setScene(scene);
         stage.show();
 
 
         // Create and display the spaceship after the scene is shown
         Spaceship spaceship = new Spaceship(gamePane, root,  settings);
-
-//        List<Bullet> bulletList = spaceship.getBullets();
-//        while (bulletList.size() > 0){
-//            // Update bullet movement for each bullet in the game
-//            for (Bullet bullet1: bulletList){
-//                bullet1.move();
-//            }
-//        }
 
     }
 
