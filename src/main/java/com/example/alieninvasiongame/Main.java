@@ -2,6 +2,7 @@ package com.example.alieninvasiongame;
 
 import com.example.alieninvasiongame.models.Bullet;
 import com.example.alieninvasiongame.models.Spaceship;
+import com.example.alieninvasiongame.models.alienmanagement.AlienManagement;
 import com.example.alieninvasiongame.settings.Settings;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -38,10 +39,10 @@ public class Main extends Application {
         Scene scene = new Scene(root, settings.getHeight(), settings.getWidth());
         scene.setFill((Paint) settings.getColors().get("black"));
 
-        // Enable fullscreen mode
-        stage.setFullScreen(true);
-        stage.setFullScreenExitHint("Press ESC to exit fullscreen");
-        stage.setFullScreenExitKeyCombination(KeyCombination.valueOf("ESCAPE"));
+//        // Enable fullscreen mode
+//        stage.setFullScreen(true);
+//        stage.setFullScreenExitHint("Press ESC to exit fullscreen");
+//        stage.setFullScreenExitKeyCombination(KeyCombination.valueOf("ESCAPE"));
 
         stage.setScene(scene);
         stage.show();
@@ -49,6 +50,7 @@ public class Main extends Application {
 
         // Create and display the spaceship after the scene is shown
         Spaceship spaceship = new Spaceship(gamePane, root,  settings);
+        AlienManagement aliens = new AlienManagement(gamePane, settings);
 
     }
 
